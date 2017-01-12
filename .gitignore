@@ -28,6 +28,8 @@ build/Release
 
 # Dependency directories
 node_modules
+myapp/node_modules
+KeyStone/node_modules
 jspm_packages
 
 # Optional npm cache directory
