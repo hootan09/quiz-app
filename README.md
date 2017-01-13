@@ -2,9 +2,11 @@
 this is the server client js app with nodejs(keystonejs) and angularjs for multidevices support
 
 ## Server side TODO:
-install:
+####install:
 
 1-mongodb
+
+2-nodejs
 
 for first start after clone need command:
 ```sh
@@ -27,7 +29,7 @@ username:admin@keystonejs.com
 password:admin
 
 ------------------------
-added restful json to the server
+# added restful json to the server
 
 list of category >>/api/getcat
 
