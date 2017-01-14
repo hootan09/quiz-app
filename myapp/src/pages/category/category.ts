@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { QuizService } from '../../app/services/quiz.service';
+import { QuizPage } from '../quiz/quiz';
 
 @Component({
   selector: 'page-category',
@@ -21,5 +22,13 @@ export class CategoryPage {
         console.log(this.categores);
     });
   }
+
+
+  viewItem(item){
+    this.navCtrl.push(QuizPage , {
+      item:item
+    });
+  }
+
 
 }

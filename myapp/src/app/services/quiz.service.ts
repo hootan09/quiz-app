@@ -10,7 +10,7 @@ export class QuizService{
 
     constructor(http:Http){
         this.http = http;
-        this.baseUrl = 'http://127.0.0.1:3000/';
+        this.baseUrl = 'http://127.0.0.1:3000';
     }
 
     // getPosts(category, limit){
@@ -19,13 +19,13 @@ export class QuizService{
     // }
 
     //get the list of quiz from server
-    getQuiz(){
-        return this.http.get(this.baseUrl+'api/LPIC1')
+    getQuiz(url){
+        return this.http.get(this.baseUrl+url)
         .map(res =>res.json());
     }
 
         getCat(){
-        return this.http.get(this.baseUrl+'api/getcat')
+        return this.http.get(this.baseUrl+'/api/getcat')
         .map(res =>res.json());
     }
 }

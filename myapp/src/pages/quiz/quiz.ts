@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController , NavParams } from 'ionic-angular';
 
 import { QuizService } from '../../app/services/quiz.service';
 
@@ -10,14 +10,16 @@ import { QuizService } from '../../app/services/quiz.service';
 })
 export class QuizPage {
     items: any;
-    test = 'سلام دنیا';
+    param: any;
 
-    constructor(public navCtrl: NavController , private quizservice:QuizService) {
-       this.getQuiz();        
+    constructor(public navCtrl: NavController , private quizservice:QuizService , public params:NavParams) {
+       this.param = params.get('item');
+       if(this.param){ this.getQuiz(); }
+
   }
 
 getQuiz(){
-    this.quizservice.getQuiz().subscribe(response => {
+    this.quizservice.getQuiz(this.param).subscribe(response => {
         this.items =response.quizs;
         console.log(this.items);
        //this.test =  JSON.stringify(response);
