@@ -12,7 +12,12 @@ exports.initLocals = function(req, res, next) {
     locals.user = req.user;
     
     // Add your own local variables here
-    
+
+    //fixes the CSRF problem in server side
+    res.header('Access-Control-Allow-Origin', "*"); 
+    res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE'); 
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
     next();
     
 };
