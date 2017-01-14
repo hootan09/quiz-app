@@ -18,9 +18,9 @@ export class QuizPage {
 
 getQuiz(){
     this.quizservice.getQuiz().subscribe(response => {
-        this.items =response;
+        this.items =response.quizs;
         console.log(this.items);
-        this.test =  JSON.stringify(response);
+       //this.test =  JSON.stringify(response);
     });
 }
 

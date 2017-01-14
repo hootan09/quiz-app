@@ -7,5 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-
+  <h1>list of exam in server</h1>
+      <ul>
+      <li *ngFor="let item of categores">
+       <b> {{ item.name }}</b>
+        <br>
+        &nbsp;&nbsp;
+        <b>Descriptions:</b> {{item.description}}
+        <br>
+        &nbsp;&nbsp;
+        <b>Server URL</b>: {{item.url}}
+      </li>
+    </ul>
 </ion-content>

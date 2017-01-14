@@ -23,4 +23,9 @@ export class QuizService{
         return this.http.get(this.baseUrl+'api/LPIC1')
         .map(res =>res.json());
     }
+
+        getCat(){
+        return this.http.get(this.baseUrl+'api/getcat')
+        .map(res =>res.json());
+    }
 }

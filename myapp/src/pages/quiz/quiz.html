@@ -8,4 +8,9 @@
 
 <ion-content padding>
     {{test}}
+    <ul>
+      <li *ngFor="let item of items">
+        {{ item.question }}
+      </li>
+    </ul>
 </ion-content>

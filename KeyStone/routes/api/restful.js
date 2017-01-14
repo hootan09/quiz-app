@@ -5,7 +5,9 @@ keystone = require('keystone');
  * quiz category
  */
 exports.getcat = function(req, res) {
-		res.apiResponse({LPIC1: '/api/LPIC1'} );
+		res.apiResponse([
+			{name:'LPIC1' , url:'/api/LPIC1' , description:'lpic1 quiz exam'}
+		]);
 }
 
 /**
