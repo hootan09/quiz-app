@@ -43,3 +43,8 @@ then add the name of model in web.js (nav)
 then add new category to restful.js (getcat)
 
 --------------------------
+--------------------------
+--------------------------
+## client side app TODO:
+### for stop the CORS erro in test browser you must install the chrome extension
+https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
