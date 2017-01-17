@@ -7,10 +7,48 @@
 </ion-header>
 
 <ion-content padding>
-    {{param}}
+  <!--{{param}}
     <ul>
       <li *ngFor="let item of items">
         {{ item.question }}
       </li>
-    </ul>
+    </ul>-->
+
+
+  <div class="quiz-area" *ngIf="inProgress">
+    <div *ngIf="!quizOver">
+      <h2 id="question">{{question}}</h2>
+      <ul id="options">
+        <li *ngFor="let option of options">
+          <label>
+					<input type="radio" name="answer" value="{{option}}">
+					{{option}}
+				</label>
+        </li>
+      </ul>
+      <button (click)="checkAnswer()" *ngIf="answerMode">Submit</button>
+
+      <div *ngIf="!answerMode">
+        <button (click)="nextQuestion()" class="next-question">Next</button>
+        <span *ngIf="correctAns">That is correct!</span>
+        <span *ngIf="!correctAns">Sorry, that is an incorrect answer.</span>
+      </div>
+    </div>
+
+    <div *ngIf="quizOver">
+      <h2>Quiz is over</h2>
+      <button (click)="reset()">Play again</button>
+    </div>
+
+    <div id="score">
+      Score: {{score}}
+    </div>
+  </div>
+
+<div class="intro" *ngIf="!inProgress">
+  <p>Welcome to the QuizApp</p>
+  <button id="startQuiz" (click)="start()">Start the Quiz</button>
+</div>
+
+
 </ion-content>
