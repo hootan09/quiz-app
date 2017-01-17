@@ -13,41 +13,55 @@
         {{ item.question }}
       </li>
     </ul>-->
-
-
-  <div class="quiz-area" *ngIf="inProgress">
-    <div *ngIf="!quizOver">
-      <h2 id="question">{{question}}</h2>
-      <ul id="options">
+<!--<ul id="options">
         <li *ngFor="let option of options">
           <label>
-					<input type="radio" name="answer" value="{{option}}">
+					<input type="radio" name="answer" [(ngModel)]="checkans" value="{{option}}">
 					{{option}}
 				</label>
         </li>
-      </ul>
-      <button (click)="checkAnswer()" *ngIf="answerMode">Submit</button>
+      </ul>-->
+
+  <div class="quiz-area" *ngIf="inProgress">
+    <div *ngIf="!quizOver">
+      <h3 id="question">{{question}}</h3>
+      <ion-list id="options" radio-group [(ngModel)]="checkans">
+        <ion-item *ngFor="let option of options">
+          <ion-label>{{option}}</ion-label>
+          <ion-radio value="{{option}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <button ion-button (click)="checkAnswer()" *ngIf="answerMode" color="primary">Submit</button>
 
       <div *ngIf="!answerMode">
-        <button (click)="nextQuestion()" class="next-question">Next</button>
-        <span *ngIf="correctAns">That is correct!</span>
-        <span *ngIf="!correctAns">Sorry, that is an incorrect answer.</span>
+        <button ion-button (click)="nextQuestion()" class="next-question" color="primary">Next</button>
+        <span *ngIf="correctAns" color="secondary">That is correct!</span>
+        <span *ngIf="!correctAns" color="danger">Sorry, that is an incorrect answer.</span>
       </div>
     </div>
 
     <div *ngIf="quizOver">
       <h2>Quiz is over</h2>
-      <button (click)="reset()">Play again</button>
+      <button ion-button (click)="reset()" color="primary">Play again</button>
     </div>
 
     <div id="score">
-      Score: {{score}}
+      <!--Score: {{score}}-->
+      <ion-card>
+        <ion-card-header>
+          Youre score is:
+        </ion-card-header>
+        <ion-card-content color="danger">
+                  {{score}}
+        </ion-card-content>
+      </ion-card>
     </div>
+
   </div>
 
 <div class="intro" *ngIf="!inProgress">
   <p>Welcome to the QuizApp</p>
-  <button id="startQuiz" (click)="start()">Start the Quiz</button>
+  <button ion-button id="startQuiz" (click)="start()" color="primary">Start the Quiz</button>
 </div>
 
 

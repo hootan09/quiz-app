@@ -18,9 +18,10 @@ export class QuizPage {
     score: number;
     question: string;
     options: string[];
-    answer: number;
+    answer: any;
     answerMode: boolean;
     correctAns: boolean;
+    checkans: any;
     ///////////
 
     constructor(public navCtrl: NavController, private quizservice: QuizService, public params: NavParams) {
@@ -39,10 +40,11 @@ export class QuizPage {
     ////////
 
     start() {
+        this.score = 0;
         this.id = 0;
         this.quizOver = false;
         this.inProgress = true;
-        //getQuestion();
+        this.getQuestion();
     };
 
     reset(){
@@ -75,6 +77,14 @@ export class QuizPage {
         // }
 
         // this.answerMode = false;
+        if(this.checkans == this.answer){
+            this.score++;
+            this.correctAns = true;
+        }
+        else{
+            this.correctAns = false;
+        }
+        this.answerMode = false;;
     };
 
     nextQuestion() {
@@ -89,27 +99,27 @@ export class QuizPage {
 		{
 			question: "Which is the largest country in the world by population?",
 			options: ["India", "USA", "China", "Russia"],
-			answer: 2
+			answer: "China"
 		},
 		{
 			question: "When did the second world war end?",
 			options: ["1945", "1939", "1944", "1942"],
-			answer: 0
+			answer: "1945"
 		},
 		{
 			question: "Which was the first country to issue paper currency?",
 			options: ["USA", "France", "Italy", "China"],
-			answer: 3
+			answer: "China"
 		},
 		{
 			question: "Which city hosted the 1996 Summer Olympics?",
 			options: ["Atlanta", "Sydney", "Athens", "Beijing"],
-			answer: 0
+			answer: "Atlanta"
 		},
 		{	
 			question: "Who invented telephone?",
 			options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
-			answer: 1
+			answer: "Alexander Graham Bell"
 		}
 	];
 
