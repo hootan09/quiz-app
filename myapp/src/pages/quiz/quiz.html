@@ -25,12 +25,14 @@
   <div class="quiz-area" *ngIf="inProgress">
     <div *ngIf="!quizOver">
       <h3 id="question">{{question}}</h3>
+      <div id="qtype" *ngIf="qtype !='Blank'">
       <ion-list id="options" radio-group [(ngModel)]="checkans">
         <ion-item *ngFor="let option of options">
           <ion-label>{{option}}</ion-label>
           <ion-radio value="{{option}}"></ion-radio>
         </ion-item>
       </ion-list>
+      </div>
       <button ion-button (click)="checkAnswer()" *ngIf="answerMode" color="primary">Submit</button>
 
       <div *ngIf="!answerMode">
@@ -58,11 +60,11 @@
     </div>
 
   </div>
-
+<div *ngIf="items">
 <div class="intro" *ngIf="!inProgress">
   <p>Welcome to the QuizApp</p>
   <button ion-button id="startQuiz" (click)="start()" color="primary">Start the Quiz</button>
 </div>
-
+</div>
 
 </ion-content>

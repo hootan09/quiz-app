@@ -22,6 +22,7 @@ export class QuizPage {
     answerMode: boolean;
     correctAns: boolean;
     checkans: any;
+    qtype: string;
     ///////////
 
     constructor(public navCtrl: NavController, private quizservice: QuizService, public params: NavParams) {
@@ -56,8 +57,33 @@ export class QuizPage {
         var q = this.getQuestions(this.id);
         if (q) {
             this.question = q.question;
-            this.options = q.options;
             this.answer = q.answer;
+            if(q.qtype == "Default")
+            {
+            switch (q.opcount) {
+                case "2":
+                    this.options = [q.op1 , q.op2];
+                    break;
+                case "3":
+                    this.options = [q.op1 , q.op2, q.op3];
+                    break;
+                case "4":
+                    this.options = [q.op1 , q.op2, q.op3 , q.op4];
+                    break;  
+                case "5":
+                    this.options = [q.op1 , q.op2, q.op3 , q.op4 , q.op5];
+                    break;           
+                default:
+                    break;
+            }
+            }
+            if(q.qtype == "Boolean")
+            {
+                this.options = ["true" , "false" ];
+                this.answer = q.true.toString();
+            }
+            this.qtype = q.qtype;
+            console.log(this.options);
             this.answerMode = true;            
         } else {
             this.quizOver = true;
@@ -84,7 +110,7 @@ export class QuizPage {
         else{
             this.correctAns = false;
         }
-        this.answerMode = false;;
+        this.answerMode = false;
     };
 
     nextQuestion() {
@@ -95,36 +121,41 @@ export class QuizPage {
     //reset();
 
     getQuestions(id:number):any {
-	var questions = [
-		{
-			question: "Which is the largest country in the world by population?",
-			options: ["India", "USA", "China", "Russia"],
-			answer: "China"
-		},
-		{
-			question: "When did the second world war end?",
-			options: ["1945", "1939", "1944", "1942"],
-			answer: "1945"
-		},
-		{
-			question: "Which was the first country to issue paper currency?",
-			options: ["USA", "France", "Italy", "China"],
-			answer: "China"
-		},
-		{
-			question: "Which city hosted the 1996 Summer Olympics?",
-			options: ["Atlanta", "Sydney", "Athens", "Beijing"],
-			answer: "Atlanta"
-		},
-		{	
-			question: "Who invented telephone?",
-			options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
-			answer: "Alexander Graham Bell"
-		}
-	];
+	// var questions = [
+	// 	{
+	// 		question: "Which is the largest country in the world by population?",
+	// 		options: ["India", "USA", "China", "Russia"],
+	// 		answer: "China"
+	// 	},
+	// 	{
+	// 		question: "When did the second world war end?",
+	// 		options: ["1945", "1939", "1944", "1942"],
+	// 		answer: "1945"
+	// 	},
+	// 	{
+	// 		question: "Which was the first country to issue paper currency?",
+	// 		options: ["USA", "France", "Italy", "China"],
+	// 		answer: "China"
+	// 	},
+	// 	{
+	// 		question: "Which city hosted the 1996 Summer Olympics?",
+	// 		options: ["Atlanta", "Sydney", "Athens", "Beijing"],
+	// 		answer: "Atlanta"
+	// 	},
+	// 	{	
+	// 		question: "Who invented telephone?",
+	// 		options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
+	// 		answer: "Alexander Graham Bell"
+	// 	}
+	// ];
 
-    if (id < questions.length) {
-        return questions[id];
+    // if (id < questions.length) {
+    //     return questions[id];
+    // } else {
+    //     return false;
+    // }
+    if (id < this.items.length) {
+        return this.items[id];
     } else {
         return false;
     }
