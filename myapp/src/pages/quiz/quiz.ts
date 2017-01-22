@@ -82,6 +82,10 @@ export class QuizPage {
                 this.options = ["true" , "false" ];
                 this.answer = q.true.toString();
             }
+            if(q.qtype == "Blank")
+            {
+                this.checkans = "";
+            }
             this.qtype = q.qtype;
             console.log(this.options);
             this.answerMode = true;            
@@ -111,6 +115,7 @@ export class QuizPage {
             this.correctAns = false;
         }
         this.answerMode = false;
+        console.log(this.checkans);
     };
 
     nextQuestion() {

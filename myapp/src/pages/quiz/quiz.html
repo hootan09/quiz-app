@@ -21,6 +21,10 @@
 				</label>
         </li>
       </ul>-->
+<!--<ion-item>
+  <ion-label floating>Username</ion-label>
+  <ion-input type="text"></ion-input>
+</ion-item>-->
 
   <div class="quiz-area" *ngIf="inProgress">
     <div *ngIf="!quizOver">
@@ -32,6 +36,12 @@
           <ion-radio value="{{option}}"></ion-radio>
         </ion-item>
       </ion-list>
+      </div>
+      <div id="qtype" *ngIf="qtype =='Blank'">
+          <ion-item>
+            <ion-label floating>َAnswer</ion-label>
+            <ion-input type="text" [(ngModel)]="checkans"></ion-input>
+          </ion-item>
       </div>
       <button ion-button (click)="checkAnswer()" *ngIf="answerMode" color="primary">Submit</button>
 
