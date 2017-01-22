@@ -47,6 +47,12 @@ then add new category to restful.js (getcat)
 --------------------------
 ## client side app TODO:
 
+you need to install some package in global mode
+
+```sh
+$ npm install -g cordova ionic
+```
+
 for run you need to do:
 
 ```sh
