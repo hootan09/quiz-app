@@ -15,6 +15,7 @@ It works for me.
 this will get you an unsigned apk applications(in release mode) you must sign it..
 ----------------------------------------
 for sign the apk
+this needs jdk in invirement variables path
 
 $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 
