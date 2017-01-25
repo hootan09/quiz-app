@@ -10,7 +10,7 @@ $ cordova platforms add android@4.1.1
 Debug >>> $ cordova build  android
 Release >>> $ cordova build --release android
 
-It works for me.
+It works for me.(you can use ionic command just like cordova)
 
 this will get you an unsigned apk applications(in release mode) you must sign it..
 ----------------------------------------
