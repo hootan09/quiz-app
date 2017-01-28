@@ -59,3 +59,17 @@ for run you need to do:
 $ npm install
 $ ionic serve
 ```
+
+## Preview/Screenshot
+
+![server 4](https://raw.github.com/hootan09/quiz-app/pic/(4).png)
+
+![server 5](https://raw.github.com/hootan09/quiz-app/pic/(5).png)
+
+![server 6](https://raw.github.com/hootan09/quiz-app/pic/(6).png)
+
+![server 1](https://raw.github.com/hootan09/quiz-app/pic/(1).png)
+
+![server 2](https://raw.github.com/hootan09/quiz-app/pic/(2).png)
+
+![server 3](https://raw.github.com/hootan09/quiz-app/pic/(3).png)
