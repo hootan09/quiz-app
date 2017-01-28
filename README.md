@@ -62,14 +62,14 @@ $ ionic serve
 
 ## Preview/Screenshot
 
-![server 4](https://raw.github.com/hootan09/quiz-app/pic/(4).png)
+![server 4](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(4).png)
 
-![server 5](https://raw.github.com/hootan09/quiz-app/pic/(5).png)
+![server 5](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(5).png)
 
-![server 6](https://raw.github.com/hootan09/quiz-app/pic/(6).png)
+![server 6](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(6).png)
 
-![server 1](https://raw.github.com/hootan09/quiz-app/pic/(1).png)
+![server 1](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(1).png)
 
-![server 2](https://raw.github.com/hootan09/quiz-app/pic/(2).png)
+![server 2](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(2).png)
 
-![server 3](https://raw.github.com/hootan09/quiz-app/pic/(3).png)
+![server 3](http://raw.github.com/hootan09/quiz-app/blob/master/pic/%20(3).png)
